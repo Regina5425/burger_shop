@@ -1,18 +1,21 @@
-import logo from '../assets/images/burger.jpg';
+import { Link } from "react-router-dom";
+import logo from "../assets/images/burger.jpg";
 
 const Header = () => {
   return (
     <div className='header'>
       <div className='container'>
-        <div className='header__logo'>
-          <img src={logo} alt='burger logo' />
-          <div>
-            <h1>Burger Shop</h1>
-            <p>самые вкусные бургеры во вселенной</p>
+        <Link to='/'>
+          <div className='header__logo'>
+            <img src={logo} alt='burger logo' />
+            <div>
+              <h1>Burger Shop</h1>
+              <p>самые вкусные бургеры во вселенной</p>
+            </div>
           </div>
-        </div>
+        </Link>
         <div className='header__cart'>
-          <a href='/cart.html' className='button button--cart'>
+          <a href='/cart' className='button button--cart'>
             <span>520 ₽</span>
             <div className='button__delimiter'></div>
             <svg

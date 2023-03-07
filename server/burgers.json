@@ -1,0 +1,85 @@
+{
+  "burgers": [
+    {
+      "id": 0,
+      "imageUrl": "https://madcanon.ru/wp-content/uploads/2022/06/burger.jpg",
+      "title": "Гамбургер",
+      "types": [0, 1],
+      "price": 410,
+      "category": 1,
+      "rating": 4
+    },
+    {
+      "id": 1,
+      "imageUrl": "https://discover24.ru/wp-content/uploads/2020/11/ng2r.jpg",
+      "title": "Черный чизбургер",
+      "types": [0],
+      "price": 465,
+      "category": 1,
+      "rating": 6
+    },
+    {
+      "id": 2,
+      "imageUrl": "https://i.pinimg.com/originals/96/af/0f/96af0f89fcaa657c9f5c753b7049c4d2.jpg",
+      "title": "Чикен бургер",
+      "types": [0, 1],
+      "price": 395,
+      "category": 2,
+      "rating": 4
+    },
+    {
+      "id": 3,
+      "imageUrl": "https://zakuskidoma.ru/wp-content/uploads/2017/05/лучший-гамбургер.jpg",
+      "title": "Роял фишбургер",
+      "types": [0],
+      "price": 455,
+      "category": 3,
+      "rating": 2
+    },
+    {
+      "id": 4,
+      "imageUrl": "https://avatars.mds.yandex.net/i?id=f0ea6fcb4750312937673fa16187bf91-5233608-images-thumbs&n=13",
+      "title": "Бургер с семгой",
+      "types": [0],
+      "price": 495,
+      "category": 3,
+      "rating": 8
+    },
+    {
+      "id": 5,
+      "imageUrl": "https://yesofcorsa.com/wp-content/uploads/2018/09/Chicken-Burger-Desktop-Wallpaper.jpg",
+      "title": "Чикен Барселона",
+      "types": [0, 1],
+      "price": 560,
+      "category": 2,
+      "rating": 2
+    },
+    {
+      "id": 6,
+      "imageUrl": "https://lamajo-house.ru/images/california_crab.jpg",
+      "title": "Чикен бекон",
+      "types": [0, 1],
+      "price": 510,
+      "category": 2,
+      "rating": 9
+    },
+    {
+      "id": 7,
+      "imageUrl": "https://static.tildacdn.com/tild6262-6564-4032-b365-343232393531/---.jpg",
+      "title": "Двойной чизбургер",
+      "types": [1],
+      "price": 535,
+      "category": 1,
+      "rating": 10
+    },
+    {
+      "id": 8,
+      "imageUrl": "https://vancouverwithlove.com/wp-content/uploads/2020/06/Easy-Beet-Black-Bean-Burgers-4.jpg",
+      "title": "Вегетарианский бургер",
+      "types": [0],
+      "price": 410,
+      "category": 4,
+      "rating": 10
+    }
+  ]
+}
