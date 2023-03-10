@@ -29,6 +29,11 @@ body {
     margin: 35px 0;
   }
 
+	&__error {
+		margin-bottom: 20px;
+		text-align: center;
+	}
+
   &__items {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
