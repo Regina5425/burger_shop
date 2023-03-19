@@ -5,8 +5,6 @@
 
   <p align="center">
     Burger shop application
-	<br/>
-	<a href="#">View Demo</a>
   </p>
 </div>
 
