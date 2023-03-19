@@ -1,23 +1,24 @@
-import { useEffect, useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import React, { useEffect, useState } from "react";
+import { useSelector } from "react-redux";
 import { setCategoryId } from "../redux/slices/filterSlice";
 import Categories from "../components/Categories";
 import Sort from "../components/Sort";
 import BurgerBlock from "../components/BurgerBlock";
 import BurgerSkeleton from "../components/BurgerSkeleton";
 import Pagination from "../components/Pagination";
-import { fetchBurgersData } from "../redux/slices/burgersSlice";
+import { BurgersType, fetchBurgersData } from "../redux/slices/burgersSlice";
+import { RootState, useAppDispatch } from "../redux/store";
 
-const Home = () => {
+const Home: React.FC = () => {
   const [currentPage, setCurrentPage] = useState(1);
 
-  const dispatch = useDispatch();
-  const { categoryId, sort } = useSelector((state) => state.filter);
+  const dispatch = useAppDispatch();
+  const { categoryId, sort } = useSelector((state: RootState) => state.filter);
   const sortType = sort.sort;
 
-  const { items, status } = useSelector((state) => state.burgers);
+  const { items, status } = useSelector((state: RootState) => state.burgers);
 
-  const onChangeCategory = (id) => {
+  const onChangeCategory = (id: number) => {
     dispatch(setCategoryId(id));
   };
 
@@ -35,7 +36,7 @@ const Home = () => {
   const skeleton = [...new Array(4)].map((_, index) => (
     <BurgerSkeleton key={index} />
   ));
-  const burgers = items.map((item) => <BurgerBlock key={item.id} {...item} />);
+  const burgers = items.map((item: BurgersType) => <BurgerBlock key={item.id} {...item} />);
 
   return (
     <div className='container'>

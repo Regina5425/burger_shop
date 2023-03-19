@@ -1,23 +1,32 @@
+import React from "react";
 import { useDispatch } from "react-redux";
-import { addItem, decrementItem, removeItem } from "../redux/slices/cartSlice";
+import { addItem, CartItemType, decrementItem, removeItem } from "../redux/slices/cartSlice";
 
-const CartItem = ({ id, title, imageUrl, price, count }) => {
+type CartItemProps = {
+	id: number;
+	title: string;
+	imageUrl: string;
+	price: number;
+	count: number;
+}
+
+const CartItem: React.FC<CartItemProps> = ({ id, title, imageUrl, price, count }) => {
   const dispatch = useDispatch();
 
   const onClickPlus = () => {
     dispatch(
       addItem({
         id,
-      })
+      } as CartItemType)
     );
   };
 
   const onClickMinus = () => {
-    dispatch(decrementItem(id));
+		dispatch(decrementItem(id));
   };
 
   const onClickRemove = () => {
-    if (window.confirm("Вы точно хотите удалить товар?", "")) {
+    if (window.confirm("Вы точно хотите удалить товар?")) {
       dispatch(removeItem(id));
     }
   };
@@ -32,6 +41,7 @@ const CartItem = ({ id, title, imageUrl, price, count }) => {
       </div>
       <div className='cart__item-count'>
         <button
+				disabled={count === 1}
           onClick={onClickMinus}
           className='button button--outline button--circle cart__item-count-minus'
         >

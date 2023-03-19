@@ -1,21 +1,31 @@
+import React from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { addItem } from "../redux/slices/cartSlice";
+import { addItem, CartItemType } from "../redux/slices/cartSlice";
+import { RootState } from "../redux/store";
 
-const BurgerBlock = ({ id, title, price, imageUrl }) => {
+type BurgerBlockType = {
+	id: number;
+	title: string;
+	price: number;
+	imageUrl: string;
+}
+
+const BurgerBlock: React.FC<BurgerBlockType> = ({ id, title, price, imageUrl }) => {
   const dispatch = useDispatch();
 
-  const cartItem = useSelector((state) =>
+  const cartItem = useSelector((state: RootState) =>
     state.cart.items.find((obj) => obj.id === id)
   );
 
   const addedCount = cartItem ? cartItem.count : 0;
 
   const onItemAdd = () => {
-    const item = {
+    const item: CartItemType = {
       id,
       title,
       price,
       imageUrl,
+			count: 0,
     };
 
     dispatch(addItem(item));

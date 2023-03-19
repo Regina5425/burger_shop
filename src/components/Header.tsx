@@ -1,11 +1,16 @@
+import React from "react";
 import { Link } from "react-router-dom";
 import logo from "../assets/images/burger.jpg";
-import { useSelector } from 'react-redux';
+import { useSelector } from "react-redux";
+import { RootState } from "../redux/store";
+import { CartItemType } from "../redux/slices/cartSlice";
 
-const Header = () => {
-
-	const {items, totalPrice} = useSelector(state => state.cart);
-	const totalCount = items.reduce((sum, item) => sum + item.count, 0);
+const Header: React.FC = () => {
+  const { items, totalPrice } = useSelector((state: RootState) => state.cart);
+  const totalCount = items.reduce(
+    (sum: number, item: CartItemType) => sum + item.count,
+    0
+  );
 
   return (
     <div className='header'>
